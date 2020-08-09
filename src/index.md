@@ -1,8 +1,8 @@
 ---
 layout: home
-title: Cassie codes.
-metaTitle: "Cassie Evans's Blog"
-metaDesc: Excitable musings about front-end development from Cassie Evans.
+title: Megha codes.
+metaTitle: "Megha's Book"
+metaDesc: Excitable musings about front-end development from Megha.
 postsHeading: Latest blog post
 archiveButtonText: See more...
 socialImage: /images/meta.jpg
