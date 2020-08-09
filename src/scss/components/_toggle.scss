@@ -1,0 +1,76 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 0;
+  flex-grow: 0;
+  margin-left: 1rem;
+}
+
+.switch .switch__toggle {
+  position: relative;
+  cursor: pointer;
+}
+
+.switch__checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch__checkbox:focus + span {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* default states */
+
+.switch .switch__toggle::before,
+.switch .switch__toggle::after {
+  content: '';
+  display: block;
+  margin: 0 3px;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(168, 235, 251, 1) 100%
+  );
+}
+
+.switch .switch__toggle::before {
+  height: 1.9rem;
+  width: 3.2rem;
+  border-radius: 999px;
+  border: solid 2px white;
+}
+
+/* light mode */
+.switch .switch__toggle::after {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background-color: #fff0a4;
+  background: linear-gradient(130deg, #ffc851 0, #fff0a4 45%, #ffc851 45%, #fcb045 100%);
+  border: solid 0.1rem #ff9b04;
+}
+
+.switch__checkbox:checked + .switch__toggle::before,
+.switch__checkbox:checked + .switch__toggle::after {
+  background: rgb(213, 213, 213);
+  background: radial-gradient(
+    circle,
+    rgba(213, 213, 213, 1) 0%,
+    rgba(82, 80, 101, 1) 100%
+  );
+}
+
+.switch__checkbox:checked + .switch__toggle::after {
+  transform: translate(calc(2.9rem - 100%)) rotate(180deg);
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 288 288'%3E%3Cg style='isolation:isolate'%3E%3Cg id='ARTBOARD_1' data-name='ARTBOARD 1'%3E%3Ccircle cx='145.27' cy='145.27' r='142.73' fill='%23fafbfb'/%3E%3Ccircle cx='55.47' cy='94.18' r='22.47' fill='%23e0e0e0'/%3E%3Cpath d='M34.92 96.1a22.47 22.47 0 0137.37-16.81A22.46 22.46 0 1040.58 111a22.37 22.37 0 01-5.66-14.9z' fill='%23bdbdbd'/%3E%3Cpath d='M56.36 71.71h-.45A22.47 22.47 0 1133 94.62v.45a23.36 23.36 0 1023.36-23.36z' fill='%23f5f5f5'/%3E%3Ccircle cx='204.69' cy='54.82' r='11.23' fill='%23e0e0e0'/%3E%3Cpath d='M194.42 55.78a11.23 11.23 0 0118.68-8.41 11.23 11.23 0 10-15.86 15.85 11.21 11.21 0 01-2.82-7.44z' fill='%23bdbdbd'/%3E%3Cpath d='M205.13 43.58h-.22A11.23 11.23 0 11193.46 55v.22a11.68 11.68 0 1011.67-11.68z' fill='%23f5f5f5'/%3E%3Ccircle cx='244' cy='168.75' r='28.03' fill='%23e0e0e0'/%3E%3Cpath d='M218.37 171.15a28 28 0 0146.61-21 28 28 0 10-39.56 39.56 27.89 27.89 0 01-7.05-18.56z' fill='%23bdbdbd'/%3E%3Cpath d='M245.11 140.72h-.56A28 28 0 11216 169.3v.56a29.14 29.14 0 1029.14-29.14z' fill='%23f5f5f5'/%3E%3Ccircle cx='169.09' cy='234.24' r='28.03' fill='%23e0e0e0'/%3E%3Cpath d='M143.46 236.64a28 28 0 0146.61-21 28 28 0 10-39.56 39.56 27.94 27.94 0 01-7.05-18.56z' fill='%23bdbdbd'/%3E%3Cpath d='M170.2 206.21h-.55a28 28 0 11-28.58 28.57v.56a29.14 29.14 0 1029.14-29.14zM143.33 185.82h-.18a9.55 9.55 0 11-9.74 9.74v.19a9.94 9.94 0 109.93-9.94z' fill='%23f5f5f5'/%3E%3Cg%3E%3Ccircle cx='269.89' cy='129.15' r='10.81' fill='%23e0e0e0'/%3E%3Cpath d='M260 130.07a10.8 10.8 0 0118-8.07 10.8 10.8 0 10-15.25 15.25 10.74 10.74 0 01-2.75-7.18z' fill='%23bdbdbd'/%3E%3Cpath d='M270.32 118.34h-.22a10.81 10.81 0 11-11 11v.22a11.24 11.24 0 1011.24-11.24z' fill='%23f5f5f5'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M84.11 142.52a14.25 14.25 0 11-14.25-14.24 14.25 14.25 0 0114.25 14.24z' fill='%23e0e0e0'/%3E%3Cpath d='M56.83 143.74a14.25 14.25 0 0123.7-10.66 14.25 14.25 0 10-20.11 20.11 14.2 14.2 0 01-3.59-9.45z' fill='%23bdbdbd'/%3E%3Cpath d='M70.43 128.28h-.29a14.25 14.25 0 11-14.52 14.52v.29a14.81 14.81 0 1014.81-14.81z' fill='%23f5f5f5'/%3E%3C/g%3E%3Cg%3E%3Ccircle cx='102.28' cy='90.55' r='11.94' transform='rotate(-45 102.287505 90.551128)' fill='%23e0e0e0'/%3E%3Cpath d='M91.37 91.57a11.93 11.93 0 0119.85-8.93 11.93 11.93 0 10-16.85 16.84 11.85 11.85 0 01-3-7.91z' fill='%23bdbdbd'/%3E%3Cpath d='M102.75 78.61h-.23a11.94 11.94 0 11-12.17 12.18V91a12.41 12.41 0 1012.4-12.41z' fill='%23f5f5f5'/%3E%3C/g%3E%3Cg%3E%3Ccircle cx='80.77' cy='225.56' r='8.05' transform='rotate(-45 80.776413 225.551314)' fill='%23e0e0e0'/%3E%3Cpath d='M73.41 226.24a8 8 0 0113.39-6 8.05 8.05 0 10-11.37 11.36 8.06 8.06 0 01-2.02-5.36z' fill='%23bdbdbd'/%3E%3Cpath d='M81.09 217.51h-.16a8.05 8.05 0 11-8.2 8.2.92.92 0 000 .16 8.37 8.37 0 108.37-8.36z' fill='%23f5f5f5'/%3E%3C/g%3E%3Cpath d='M145.27 227.13a154.55 154.55 0 01-142.2-94q-.51 6-.52 12.12a142.73 142.73 0 10285.45 0q0-6.12-.52-12.12a154.55 154.55 0 01-142.21 94z' fill='%23212121' opacity='.1' style='mix-blend-mode:multiply'/%3E%3Cpath d='M145.27 259.62A159 159 0 016.35 178.09a142.75 142.75 0 00277.85 0 159.05 159.05 0 01-138.93 81.53z' fill='%23212121' opacity='.1' style='mix-blend-mode:multiply'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border: solid 0.1rem grey;
+}

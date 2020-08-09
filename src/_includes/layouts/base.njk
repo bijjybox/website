@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml"/>
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/mosk-600.woff2"/>
+		<link rel="preload" as="font" type="font/woff" crossorigin href="/fonts/mosk-600.woff"/>
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/mosk-900.woff2"/>
+		<link rel="preload" as="font" type="font/woff" crossorigin href="/fonts/mosk-900.woff"/>
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/jenthill.woff2"/>
+		<link rel="preload" as="font" type="font/woff" crossorigin href="/fonts/jenthill.woff"/>
+		{% include "partials/global/meta-info.njk" %}
+		<style>
+			{% include "assets/css/global.css" %}</style>
+		{% block head %}{% endblock %}
+		<script>
+
+			// setting dark vars before DOM content is loading to avoid flicker
+			if (window.localStorage.darkMode === 'true' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				// prioritise local storage light mode over system preference
+
+				if (window.localStorage.darkMode !== 'false') {
+					localStorage.setItem('darkMode', true);
+
+					document.documentElement.style.setProperty('--color-mint', 'hsl(316, 30%, 36%)');
+					document.documentElement.style.setProperty('--color-highlight', 'hsl(240, 33%, 77%)');
+					document.documentElement.style.setProperty('--color-lilac', 'hsl(263, 29%, 32%)');
+					document.documentElement.style.setProperty('--color-sherbet', 'hsl(260, 24%, 18%)');
+					document.documentElement.style.setProperty('--color-light', 'hsl(274, 4%, 15%)');
+					document.documentElement.style.setProperty('--color-light-fade', 'hsl(274, 4%, 16%)');
+					document.documentElement.style.setProperty('--color-light-down', 'hsl(210, 4%, 98%)');
+					document.documentElement.style.setProperty('--color-light-down-2', 'hsl(210, 4%, 95%)');
+					document.documentElement.style.setProperty('--color-light-down-3', 'hsl(210, 4%, 80%)');
+					document.documentElement.style.setProperty('--color-mid', 'hsl(0, 0%, 80%)');
+					document.documentElement.style.setProperty('--color-dark', 'hsl(0, 0%, 98%)');
+					document.documentElement.style.setProperty('--color-dark-down', 'hsl(0, 0%, 98%)');
+				}
+			}
+		</script>
+	</head>
+	<body {% if 'posts' in page.url %} class="posts" {% endif %}>
+
+		{% include "partials/global/site-head.njk" %}
+		{% block content %}{% endblock content%}
+
+		<script>
+			if ('serviceWorker' in navigator) {
+window.addEventListener('load', () => {
+navigator.serviceWorker.register('/service-worker.js');
+});
+}
+		</script>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+		<script defer src="/js/DrawSVGPlugin.min.js"></script>
+		<script defer src="/js/CustomEase.min.js"></script>
+		<script defer src="/js/CustomBounce.min.js"></script>
+		<script defer src="/js/CustomWiggle.min.js"></script>
+		<script defer src="/js/ScrollTrigger.min.js"></script>
+		<script defer src="/js/Draggable.min.js"></script>
+		<script defer src="/js/Physics2DPlugin.min.js"></script>
+		<script defer src="/js/main.js"></script>
+		<script async src="https://platform.twitter.com/widgets.js" rel="preconnect" charset="utf-8"></script>
+	</body>
+</html>

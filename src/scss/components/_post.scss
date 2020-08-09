@@ -1,0 +1,228 @@
+.post {
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &__intro {
+    position: relative;
+    z-index: 1;
+    // background-image: linear-gradient(
+    //   to bottom,
+    //   var(--color-sea-fade) 0%,
+    //   transparent 75%,
+    //   transparent 100%
+    // );
+  }
+  &__body-cont {
+    // background-color: var(--color-light);
+  }
+
+  &__body {
+    --flow-space: #{get-size(800)};
+
+    /**
+     * Generic HTML styles 
+     */
+    h2 + *,
+    h3 + * {
+      --flow-space: #{get-size(500)};
+    }
+
+    h2,
+    h3 {
+      position: relative;
+      /*display: flex;*/
+
+      @include apply-utility('leading', 'tight');
+
+      code {
+        font-size: var(--step-2);
+      }
+    }
+
+    pre {
+      position: relative;
+      border-radius: 15px;
+    }
+
+    pre * ::-webkit-scrollbar {
+      width: 11px;
+    }
+
+    pre * {
+      scrollbar-width: auto;
+      scrollbar-color: var(--color-lilac-no-swop) var(--color-dark-no-swop);
+    }
+
+    pre *::-webkit-scrollbar-track {
+      background: var(--color-dark-no-swop);
+    }
+    pre *::-webkit-scrollbar-thumb {
+      background-color: var(--color-lilac-no-swop);
+      border-radius: 6px;
+      border: 3px solid var(--color-dark-no-swop);
+    }
+
+    code {
+      font-size: var(--step-0);
+      white-space: pre;
+      color: var(--color-lilac-no-swop);
+      font-weight: 700;
+      margin-left: 0.5ch;
+      margin-right: 0.5ch;
+    }
+
+    pre > code {
+      overflow: auto;
+      position: unset;
+      width: 100%;
+      margin-right: 0;
+      --color-selection: var(--color-lilac);
+      --color-selection-bg: var(--color-light-selection);
+    }
+
+    pre[class*='language-'] {
+      overflow: visible;
+      margin-top: 2rem;
+      &:after {
+        @include apply-utility('font', 'sans-serif');
+        font-size: var(--step--1);
+        position: absolute;
+        content: '';
+        bottom: 100%;
+        right: 1.5rem;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        background-color: inherit;
+        color: var(--color-lilac-up);
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        min-width: 3rem;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+    }
+
+    pre[class*='language-'] + pre[class*='language-'] {
+      margin-top: 4rem;
+    }
+
+    pre.language-css {
+      &:after {
+        content: 'CSS';
+      }
+    }
+
+    pre.language-svg {
+      &:after {
+        content: 'SVG';
+      }
+    }
+
+    pre.language-html {
+      &:after {
+        content: 'HTML';
+      }
+    }
+
+    pre.language-js {
+      &:after {
+        content: 'JS';
+      }
+    }
+
+    blockquote {
+      border-left: 0.4rem solid var(--color-mint);
+      margin-left: 0;
+      padding-left: get-size(500);
+      font-style: italic;
+      font-weight: bold;
+      color: var(--color-dark-down);
+      font-size: var(--step-1);
+      p {
+        opacity: 0.85;
+        padding: get-size(500) 0;
+      }
+    }
+
+    ol,
+    ul {
+      margin-left: get-size(500);
+    }
+
+    li + li {
+      margin-top: get-size(300);
+    }
+
+    figure,
+    figure + *,
+    pre > code,
+    .video-player,
+    .video-player + * {
+      --flow-space: #{get-size('max')};
+    }
+
+    figure,
+    pre > code,
+    .video-player {
+      width: 100%;
+      max-width: map-get($metrics, 'wrap-max-width');
+      margin-left: 50%; /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
+      transform: translateX(
+        -50%
+      ); /* changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
+      position: relative;
+    }
+
+    figure img,
+    .video-player {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    figure img {
+      position: relative;
+      z-index: 1;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+      max-width: map-get($metrics, 'wrap-inner-max-width');
+      margin: 0.5rem auto 0 auto;
+      padding: 0 get-size(500);
+    }
+
+    pre > code {
+      display: block;
+      font-size: var(--step-0);
+    }
+
+    @media screen and (min-width: 800px) {
+      pre > code {
+        padding: get-size(500);
+      }
+    }
+  }
+
+  &__footer {
+    background: var(--color-mint);
+
+    h2 {
+      flex-shrink: 0;
+      margin-right: get-size('base');
+    }
+
+    h2 a {
+      @extend %visually-hidden;
+    }
+
+    a {
+      background: var(--color-bg);
+      padding: 0.4rem 0.6rem;
+    }
+
+    .nav {
+      text-transform: none;
+    }
+  }
+}

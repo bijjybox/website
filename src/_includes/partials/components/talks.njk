@@ -1,0 +1,9 @@
+{% for item in speaking.items %}
+	<article class="[ Card ]">
+		<p class="[ Card__type ] [ font-cursive h6 ] {% if loop.last %}js-last-card{% endif %}">{{ item.type }}</p>
+		<a href="{{ item.url }}" class="[ Card__link ] [ sf-flow underline ]">
+			<h2 class="[ h4 ] [ underline__text ]">{{ item.title }}</h2>
+			{{ item.content | safe }}
+		</a>
+	</article>
+{% endfor %}

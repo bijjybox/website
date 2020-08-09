@@ -1,0 +1,37 @@
+{% if navigation.items %}
+<nav class="nav">
+  <ul class="[ nav__list ] [ box-flex align-center md:space-before ]">
+    {% for item in navigation.items %} {% set externalAttribute = '' %} {% set
+    currentAttribute = '' %} {% if item.external %} {% set externalAttribute = '
+    rel="external"' %} {% endif %} {% if page.url == item.url %} {% set currentAttribute =
+    ' aria-current="page"' %} {% endif %}
+
+    <li class="nav__item">
+      <a
+        href="{{ item.url }}"
+        {{
+        externalAttribute
+        |
+        safe
+        }}{{
+        currentAttribute
+        |
+        safe
+        }}
+        class="nav__item-hover"
+        data-id="{{ item.text }}"
+      >
+        <span class="nav__item-hover-inner" data-hover="{{ item.text }}">{{
+          item.text
+        }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+<label class="switch js-night-toggle">
+  <input class="switch__checkbox js-night-checkbox" type="checkbox" />
+  <span class="switch__toggle"></span>
+  Toggle dark mode
+</label>
+{% endif %}

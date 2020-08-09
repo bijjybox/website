@@ -1,0 +1,48 @@
+{% if postListItems.length %}
+	<section class="[ Post-list ] [ pad-around ]">
+		<div class="[ sf-flow ]">
+			{% if postListHeading %}
+				<h2 class="[ Post-list__heading ] [ h4 font-sans-serif ]">{{ postListHeading }}</h2>
+			{% endif %}
+
+			<ol class="[ Post-list__items ] [ sf-flow ]" reversed>
+				{% for item in postListItems %}
+					{% if item.external or item.date.getTime() <= global.now %}
+
+						<li class="[ Post-list__item ] [ sf-flow ]">
+							<img class="[ Post-list__item__image ]" src="{{ item.data.image }}" alt="{{ item.data.alt }}">
+							<p class="[ small font-sans-serif spacing-md ] [ Post-list__item__date ]">
+								<time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+							</p>
+
+							<a class="[ Post-list__item__heading ] [ underline ]" {% if item.external %} rel="external" {% else %} rel="bookmark" {% endif %} href="{{ item.url }}">
+								<h3 class="[ h5 ] [ underline__text ]">
+									{{ item.data.title }}
+								</h3>
+							</a>
+							<p class="[ Post-list__item__meta ]">
+								{{ item.data.metaDesc }}
+							</p>
+
+							<footer class="small">
+								{% if item.data.tags %}
+									<div class="[ Post-list__item__tags ]">
+										{% for tag in item.data.tags %}
+											<a class="[ small font-sans-serif spacing-md ] [ Post-list__item__tag ]" href=" /tags/{{ tag }}">{{ tag }}</a>
+										{% endfor %}
+									</div>
+								{% endif %}
+
+								{% if item.publication.url %}
+									<a rel="external" class="[ font-sans-serif spacing-md ]" href="{{ item.publication.url }}">{{ item.publication.name }}</a>
+								{% endif %}
+
+								<a class="[ arrow ] [ Post-list__item__link ]" rel="external" href="{{ item.url }}">Read post</a>
+							</footer>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
+	</section>
+{% endif %}

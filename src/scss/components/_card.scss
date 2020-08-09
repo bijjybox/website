@@ -1,0 +1,43 @@
+.Card {
+  --underline: var(--color-peach);
+  &__type {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    transform: rotate(-5deg);
+    transform-origin: bottom left;
+    padding-left: 0.2rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Card {
+    display: flex;
+    justify-content: space-between;
+
+    &__link {
+      width: 65%;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 2px;
+        background-color: var(--color-dark);
+        top: 0.75rem;
+        right: calc(100% + 2rem);
+      }
+    }
+  }
+}
+
+.night {
+  .Card {
+    --underline: var(--color-mint);
+  }
+}

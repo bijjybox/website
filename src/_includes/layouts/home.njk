@@ -1,0 +1,41 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Homepage' %}
+{# Intro content #}
+{%
+set introHeading = title %}
+{% set introSummary %}{{ content | safe }}{% endset %}
+{# Post
+list content #}
+{% set postListHeading = postsHeading %}
+{% set postListItems =
+collections.postFeed.slice(0, 1) %}
+{# Archive link #}
+{% if postListItems.length <
+collections.posts.length %}
+	{% set paginationNextText = archiveButtonText %}
+	{% set
+paginationNextUrl = '/writing' %}
+{% endif %}
+{% block content %}
+
+	{% set speakingImage = '/images/speaker.jpg' %}
+	{% set speakingAlt = 'black and white photo of Cassie on stage at beyond tellerrand. Screen behind her shows an SVG neopet.'%}
+	{% set speakingCaption = 'beyond tellerrand' %}
+	{% set speakingHeading = "Speaking." %}
+	{% set speakingIntro = "<p>The first time I got asked to speak at a conference, my gut reaction was “heck no. That sounds terrifying”.</p><p>So naturally I said yes. Since then I’ve spoken at conferences and meet-ups all over the world. It still terrifies me.</p>" %}
+	{% set speakingHeading = "Speaking." %}
+	{% set speakingLink = "Check out my videos and upcoming talks." %}
+	{% set speakingUrl = "/speaking" %}
+
+	{% set talks = true %}
+
+	<main id="main-content" class="main-content" tabindex="-1">
+		{% include "partials/components/hero.njk" %}
+		{% include "partials/components/posts-intro.njk" %}
+		{% include "partials/components/speaking.njk" %}
+	</main>
+
+	<section class="slide-out">
+		{% include "partials/components/contact.njk" %}
+	</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "type": "workshop",
+      "title": "Getting started with SVG animation",
+      "url": "/speaking/getting-started-with-svg-animation",
+      "content": "<p>Animation is one of the best ways to bring brand personality and character to an online experience, but in the busy world of front-end development, it can often be overlooked.</p><p>In this workshop we cover everything you need to know to get started with SVG animation.</p>"
+    },
+    {
+      "type": "talk",
+      "title": "Painting with SVG",
+      "url": "/speaking/painting-with-svg",
+      "content": "<p>SVG's a great format for creating illustrative graphics on the web, but it can sometimes feel a bit... flat?</p><p>Illustration in the real-world is gloriously messy. It's full of texture, human error, smudges, and paint splatters. In this talk we take a look at how we can use different SVG techniques to recreate some tactile 'messiness'</p>"
+    },
+    {
+      "type": "talk",
+      "title": "Interactive web animation with SVG",
+      "url": "/speaking/interactive-web-animation-with-svg",
+      "content": "<p>Have you ever felt uninspired by the every-day grind?</p><p>Like coding is all work and no play? Me too.</p><p>In this talk I explain how playing with SVG helped me explore some fun new browser API's. I give some advice on how to get started, share some demos and advise on when to reach for an animation library.</p><p>Oh, and there's neopets in it.</p>"
+    },
+    {
+      "type": "talk",
+      "title": "Limitation breeds creativity",
+      "url": "/speaking/limitation-breeds-creativity",
+      "content": "<p>Constraints might not feel like what you need when you're trying to be creative. But working within constraints can help you get started and provide unconventional ways around a problem.</p><p>In this talk I chat about how to get over the fear of a blank page, and show off some fun CSS only demos.</p>"
+    }
+  ]
+}

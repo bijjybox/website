@@ -1,0 +1,118 @@
+.Featured {
+  --underline: var(--color-marshmellow);
+
+  &__tabs {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .Browser {
+    padding: 2rem 0 0 0;
+    overflow: hidden;
+  }
+
+  .video-player {
+    width: 100%;
+    width: calc(100% + 4px);
+    margin-bottom: -2px;
+    margin-left: -2px;
+
+    iframe {
+      bottom: -2px;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    width: 30%;
+    min-width: 100px;
+    transform-origin: center;
+    animation: rotate infinite 1s linear paused both;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    background-color: var(--color-dark);
+
+    &-inner {
+      --flow-space: 0.5em;
+      box-shadow: 0px 0px 0px 2px var(--color-dark) inset;
+      padding: 1rem 1.5rem;
+      background-color: var(--color-light);
+      transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+    }
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__link[aria-selected='true'] {
+    .Featured__link-inner {
+      transform: translate(0.5rem, -0.5rem);
+      background-color: var(--color-peach);
+    }
+  }
+
+  &__tab + &__tab &__link-inner {
+    border-top: none;
+    margin-top: -2px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Featured {
+    --underline: var(--color-marshmellow);
+
+    &__tabs {
+      margin-right: 1.5rem;
+      margin-top: 0;
+      padding-left: 0;
+    }
+
+    &__inner {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .Browser {
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+  }
+}
+
+.night {
+  .Featured {
+    &__link {
+      &-inner {
+        background-color: var(--color-sherbet);
+      }
+    }
+  }
+}

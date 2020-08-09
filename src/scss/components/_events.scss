@@ -1,0 +1,47 @@
+.Events {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 1rem;
+  &__item {
+    min-width: 220px;
+    flex: 0 1 auto;
+    padding: 1.5rem 1rem;
+    background-color: var(--color-sherbet-fade);
+    border-radius: 20px;
+  }
+
+  > * + * {
+    margin-left: 0.5rem;
+  }
+
+  &__link {
+    color: var(--color-dark);
+    text-align: center;
+  }
+
+  &__svg {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+// @media screen and (min-width: 800px) {
+//   .Events {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-left: -1rem;
+//     margin-right: -1rem;
+
+//     &__item {
+//       max-width: 50%;
+//       padding: 1rem;
+//     }
+//   }
+// }

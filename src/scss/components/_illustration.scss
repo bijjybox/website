@@ -1,0 +1,42 @@
+.Illustration {
+  .beam {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  20% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 0;
+  }
+  26% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.2;
+  }
+  38% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+#light {
+  cursor: pointer;
+}
+
+.night {
+  .Illustration {
+    filter: brightness(90%) saturate(90%);
+  }
+  .beam {
+    animation: flicker 0.8s 0.2s forwards;
+  }
+}

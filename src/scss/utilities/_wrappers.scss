@@ -1,0 +1,37 @@
+.wrapper {
+  max-width: map-get($metrics, 'wrap-max-width');
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(1rem + (8 - 1) * ((100vw - 20rem) / (100 - 20)));
+  padding-right: calc(1rem + (8 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.wrapper-sm {
+  max-width: map-get($metrics, 'wrap-small-max-width');
+  padding-left: calc(1rem + (4 - 1) * ((100vw - 20rem) / (100 - 20)));
+  padding-right: calc(1rem + (4 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.wrapper-md {
+  max-width: map-get($metrics, 'wrap-medium-max-width');
+  padding-left: calc(1rem + (4 - 1) * ((100vw - 20rem) / (100 - 20)));
+  padding-right: calc(1rem + (4 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.wrapper-lg {
+  max-width: map-get($metrics, 'wrap-large-max-width');
+}
+
+@media screen and (min-width: 100em) {
+  .wrapper,
+  .wrapper-lg {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .wrapper-sm,
+  .wrapper-md {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

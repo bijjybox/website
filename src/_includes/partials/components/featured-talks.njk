@@ -1,0 +1,26 @@
+<section class="[ Featured ] [ wrapper ]">
+	<h2 class="[ Speaking__heading ] [ h3 ] [ pad-after-sm ]">Here's some of my talks.</h2>
+
+	<div class=" [ Featured__inner ]">
+		<ul class="[ Featured__tabs ]">
+			{% for video in videos.items %}
+				<li class="[ Featured__tab ]">
+					<a class="[ Featured__link ]" id="js-featured-tab" role="tab" href="#" data-href="{{ video.url }}" data-title="{{ video.title }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
+						<div class="[ Featured__link-inner ] [ sf-flow ]">
+							<h2 class="[ p font-sans-serif ]">{{ video.title }}</h2>
+							<p class="[ small ]">{{ video.conference }}</p>
+						</div>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="[ Browser ] [ Featured__player ]">
+			<div class="[ video-player ]">
+				<iframe id="js-featured-video" title="Video player: Interactive web animation with SVG" width="560" height="315" src="https://player.vimeo.com/video/373163932" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<svg id="js-featured-loader" class="[ Featured__loader ]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+				<path opacity="0.5" stroke-width="4" stroke="var(--color-marshmellow)" fill="var(--color-marshmellow)" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"></path>
+			</svg>
+		</div>
+	</div>
+</section>

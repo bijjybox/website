@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "title": "IndieWebCamp West",
+      "link": "https://2020.indieweb.org/west",
+      "date": "2020-06-27 18:00:00",
+      "location": "the interwebz",
+      "time": "6pm BST"
+    },
+    {
+      "title": "Teach Me Something",
+      "link": "https://www.twitch.tv/edieblu",
+      "date": "2020-07-22 18:00:00",
+      "location": "Eva's twitch stream",
+      "time": "6pm BST"
+    },
+    {
+      "title": "#ViennaCalling",
+      "link": "https://webclerks.at/vienna-calling",
+      "date": "2020-07-29 19:00:00",
+      "location": "Live on twitch",
+      "time": "6pm BST"
+    }
+  ]
+}

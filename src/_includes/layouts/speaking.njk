@@ -1,0 +1,72 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Speaking' %}
+
+{% set speakingHeading = "Speaking" %}
+{% set speakingImage = '/images/css-camp.jpg' %}
+{% set speakingAlt = 'Cassie on stage at CSS camp in barcelona. Screen behind her shows an SVG jellyfish.'%}
+{% set speakingCaption = 'CSS Camp' %}
+{% set speakingIntro = "<p>I got into making things on the web back in the whimsical days of myspace and neopets.</p><p>Remember the space jam website, blink tags and sparkly trailing cursors?</p><p>I aim to bring back some of that playfulness to the web through my talks and workshops.</p>" %}
+
+
+{% block content %}
+	<main id="main-content" tabindex="-1" class="speaking">
+
+		{% include "partials/components/speaking.njk" %}
+
+		{% include "partials/components/featured-talks.njk" %}
+
+		{% if upcoming.events %}
+			<div class="[ wrapper ] [ pad-before-lg ]">
+				<div class="[ Workshop__events ] [ sf-flow ]">
+					<h2 class="[ h4 ]">Upcoming events</h2>
+					<p>Things are understandably pretty quiet at the moment due to the *situation*. But I'll be popping up online here and there.</p>
+					<ol class="[ Events ]" reversed="reversed">
+						{% for event in upcoming.events %}
+							{% if helpers.isUpcoming(event.date) %}
+								<li class="[ Events__item ] [ sf-flow ]">
+									<h3 class="[ h6 ]">
+										<a href="{{ event.link }}" class="[ Events__link ]" rel="bookmark">{{event.title}}</a>
+									</h3>
+									<p class="[ Events__row ] [ small ]">
+										<svg class="[ Events__svg ]" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 75.46 73.95">
+											<path fill="currentColor" d="M64.68 10.9h-5.17V7.64a1.68 1.68 0 00-3.35 0v3.26H21.91V7.64a1.68 1.68 0 00-3.36 0v3.26H12.4a7.14 7.14 0 00-7.27 7V59a7.17 7.17 0 007.27 7.06h52.28A7.16 7.16 0 0072 59V17.92a7.13 7.13 0 00-7.32-7.02zM68.6 59a3.86 3.86 0 01-3.92 3.8H12.4A3.88 3.88 0 018.48 59V29H68.6zM8.48 25.71v-7.79a3.83 3.83 0 013.92-3.76h6.15v2.4a1.68 1.68 0 003.36 0v-2.4h34.25v2.4a1.68 1.68 0 003.35 0v-2.4h5.17a3.84 3.84 0 013.92 3.76v7.79z"/>
+										</svg>
+										<time datetime="{{ event.date | w3DateFilter }}">{{ event.date | dateFilter }}
+										</time>
+									</p>
+									{% if event.time %}
+										<p class="[ Events__row ] [ small ]">
+											<svg class="[ Events__svg ]" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 94.35 88.69">
+												<path d="M82.55 51.13a38.59 38.59 0 11.4-10.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+												<polyline points="61.95 53.03 44.75 44.13 44.75 12.83" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+												<polyline points="75.45 33.63 83.25 41.03 89.45 32.93" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+												<circle cx="44.75" cy="44.13" r="2.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+											</svg>
+											<span>{{ event.time }}</span>
+										{% endif %}
+									</p>
+									<p class="[ Events__row ] [ small ]">
+										<svg class="[ Events__svg ]" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 75.46 73.95">
+											<g stroke="currentColor" fill="currentColor" stroke-miterlimit="10" stroke-width=".75">
+												<path d="M37.73 3.52A24.35 24.35 0 0013.4 27.85c0 9.76 5.91 20.16 11.69 28.26A122.34 122.34 0 0036.66 70a1.53 1.53 0 002.15 0 123.58 123.58 0 0011.57-13.89c5.78-8.1 11.68-18.5 11.68-28.26A24.35 24.35 0 0037.73 3.52zm0 3A21.27 21.27 0 0159 27.85c0 8.49-5.5 18.62-11.12 26.49a98.51 98.51 0 01-10.15 12.21 98.4 98.4 0 01-10.17-12.21c-5.62-7.87-11.12-18-11.12-26.49A21.27 21.27 0 0137.73 6.56z"/>
+												<path d="M40.61 17.59a10.68 10.68 0 00-13.14 13.16 10.54 10.54 0 007.37 7.37A10.69 10.69 0 0048 25a10.52 10.52 0 00-7.39-7.41zm-4.36 2.79a7.62 7.62 0 11-6 6 7.62 7.62 0 016-6z"/>
+											</g>
+										</svg>
+										{{ event.location }}
+									</p>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ol>
+				</div>
+			</div>
+		{% endif %}
+		{% set speakingHeading = "Talks & workshops." %}{% set speakingIntro = null %}{% set speakingImage = null %}{% set talks = true %}<div class="[ wrapper ] [ pad-after-xlg pad-before-lg ] ">
+			{% if talks %}
+				<div class="[ Speaking__talks ] [ sf-flow ]">
+					{% include "partials/components/talks.njk" %}
+				</div>
+			{% endif %}
+		</div>
+	</main>
+{% endblock %}

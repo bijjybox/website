@@ -1,0 +1,169 @@
+.Workshop {
+  --color-selection: var(--color-lilac);
+  --color-selection-bg: var(--color-dark-selection);
+  background-color: var(--color-sherbet);
+
+  &__heading {
+    max-width: 16ch;
+  }
+
+  &__intro {
+    max-width: 65ch;
+  }
+
+  &__feedback {
+    position: relative;
+    z-index: 1;
+  }
+
+  .Browser {
+    padding: 2rem 0 0 0;
+    overflow: hidden;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+  .twitter-tweet {
+    max-width: 300px;
+  }
+
+  .Blockquote {
+    margin-top: 3rem;
+    position: relative;
+    margin-left: 0;
+    padding: 0;
+    font-style: italic;
+    padding-left: 2rem;
+    border-left: solid 3px var(--color-lilac);
+    z-index: 1;
+    max-width: 60ch;
+    margin-right: 1rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      height: 2em;
+      background-color: var(--color-sherbet);
+      width: 10px;
+      margin-top: -1em;
+    }
+
+    svg {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -0.5em;
+      width: 0.8em;
+      height: 0.8em;
+      margin-top: -0.4em;
+    }
+  }
+
+  &__subcontent {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+      margin-left: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    li {
+      position: relative;
+      margin-top: 0.3rem;
+    }
+
+    li::before {
+      position: absolute;
+      background-color: var(--color-lilac);
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      left: -1.2rem;
+      top: 0.7em;
+      height: 8px;
+      width: 8px;
+    }
+  }
+
+  .Speaking__image {
+    max-width: 500px;
+    height: 400px;
+    margin-top: 0;
+  }
+
+  &__slides-cont {
+    iframe {
+      min-height: 300px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .Workshop {
+    &__tweets {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -1rem;
+      margin-right: -1rem;
+
+      .twitter-tweet {
+        width: 50% !important;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Workshop {
+    &__resources {
+      display: flex;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      > * {
+        flex: 1 1 50%;
+      }
+    }
+
+    &__video {
+      padding: 1rem;
+      margin-top: 0;
+    }
+
+    &__slides {
+      padding: 1rem;
+    }
+
+    &__slides-cont {
+      position: relative;
+      height: 0;
+      padding-bottom: 63%;
+
+      iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Workshop {
+    &__tweets {
+      .twitter-tweet {
+        width: 33.33% !important;
+      }
+    }
+  }
+}

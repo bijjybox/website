@@ -1,0 +1,138 @@
+.Hero {
+  background-color: var(--color-light-fade);
+  min-height: 100vh;
+
+  &__svg {
+    display: none;
+    align-self: flex-start;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__eyebrow {
+    transform: rotate(-5deg);
+    transform-origin: bottom left;
+    span {
+      opacity: 0.9;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.6px;
+    .outline {
+      color: var(--color-dark);
+      -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: var(--color-dark);
+    }
+    .outline:hover {
+      -webkit-text-fill-color: var(--color-dark);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .js-hover-talk {
+    position: relative;
+    z-index: 3;
+
+    svg {
+      opacity: 0;
+      display: none;
+      position: absolute;
+      width: 200px;
+      bottom: 100%;
+      left: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .js-hover-talk:hover {
+    position: relative;
+
+    svg {
+      opacity: 0;
+      display: block;
+    }
+  }
+
+  .js-hover-write {
+    position: relative;
+    z-index: 2;
+    span {
+      position: absolute;
+      font-size: 2rem;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  .js-fun,
+  .js-hover-talk,
+  .js-hover-write {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Hero {
+    position: relative;
+
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &__content {
+      width: 49%;
+    }
+
+    &__svg {
+      display: block;
+      height: 100vh;
+      flex-grow: 1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 68%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-mint);
+      z-index: 0;
+      //your screen is ridiculously large m8
+      max-width: 1800px;
+    }
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .Hero {
+    &__content {
+      width: 45%;
+    }
+  }
+}

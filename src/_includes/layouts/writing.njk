@@ -1,0 +1,44 @@
+{% extends 'layouts/base.njk' %}
+
+{% set pageType = 'Writing' %}
+
+{# Intro content #}
+{% set introHeading = "Writing." %}
+{% set introByline %}
+<p>My blog is where I think out loud. Expect
+	<em>mainly</em>
+	front-end development, with a sprinkling of self care and mental health.</p>
+<p>Occasionally I write articles elsewhere, you can find them here too.</p>
+
+{% endset %}
+{# 
+{% set postListItems = collections.postFeed.slice(0, 1) %}
+{# Archive link #}
+{# {% if postListItems.length <
+collections.posts.length %}
+	{% set paginationNextText = archiveButtonText %}
+	{% set
+paginationNextUrl = '/writing' %}
+{% endif %} #}
+
+
+	{% block content %}
+		<main id="main-content" tabindex="-1" class="writing"> <div class="[ pad-before-xlg ]">
+			<div class="[ wrapper wrapper-sm ] [ pad-before ]">
+				{% include "partials/components/intro.njk" %}
+			</div>
+		</div>
+
+		<div class="[ pad-around-xlg ]">
+			<div class="[ wrapper wrapper-lg ]">
+				{% set postListHeading = 'From my blog' %}
+				{% set postListItems = collections.posts %}
+				{% include "partials/components/post-list.njk" %}
+
+				{% set postListHeading = 'Articles from elsewhere' %}
+				{% set postListItems = writing.items %}
+				{% include "partials/components/post-list.njk" %}
+			</div>
+		</div>
+	</main>
+{% endblock %}

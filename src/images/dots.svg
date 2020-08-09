@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="133.9" height="97.5" viewBox="0 0 133.9 97.5" overflow="visible">
+  <style></style>
+  <defs>
+    <pattern x="-257.8" y="-219" width="8" height="8" patternUnits="userSpaceOnUse" id="Unnamed_Pattern_4" viewBox="0 -8 8 8" overflow="visible">
+      <rect y="-8" width="8" height="8" fill="none"/>
+      <circle cx="4.3" cy="-4" r=".7" fill="#371d26" stroke="#371d26" stroke-miterlimit="10"/>
+    </pattern>
+  </defs>
+  <pattern id="SVGID_1_" xlink:href="#Unnamed_Pattern_4" patternTransform="translate(-1.3637 4.2113)"/>
+  <rect width="133.9" height="90" fill="url(#SVGID_1_)"/>
+</svg>

@@ -1,0 +1,60 @@
+.Posts-intro {
+  --color-selection-bg: var(--color-dark-selection);
+  --color-selection: var(--color-lilac);
+  background-color: var(--color-lilac);
+  min-height: 100vh;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__heading {
+    color: var(--color-dark);
+    letter-spacing: 0.6px;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Posts-intro {
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 2rem 0.33fr 0.33fr 0.33fr 0.33fr;
+      grid-template-rows: auto 1fr 2rem 0.5fr 1fr;
+
+      .Browser {
+        margin-top: 0;
+      }
+
+      .Browser:nth-of-type(1) {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 3;
+      }
+
+      .Browser:nth-of-type(2) {
+        grid-column: 3 / span 3;
+        grid-row: 4 / span 2;
+      }
+
+      .Browser:nth-of-type(3) {
+        grid-column: 4 / span 3;
+        grid-row: 1 / span 2;
+      }
+
+      .button {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+        justify-self: center;
+        align-self: center;
+      }
+    }
+
+    &__heading {
+      margin-bottom: 1.5rem;
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+  }
+}

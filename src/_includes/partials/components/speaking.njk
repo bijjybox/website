@@ -1,0 +1,29 @@
+<section id="speaking" class="[ Speaking ] [ pad-around-xlg ]">
+	<div class="[ wrapper ]">
+		<div class="[ Speaking__intro ]">
+			<div class="[ Speaking__text ] [ sf-flow ]">
+				<h2 class="[ Speaking__heading ] [ h1 ]">{{ speakingHeading }}</h2>
+				{% if speakingIntro %}
+					{{ speakingIntro | safe }}
+				{% endif %}
+				{% if speakingLink %}
+					<a class="[ Speaking__link ]" href="{{ speakingUrl }}">{{ speakingLink }}</a>
+				{% endif %}
+			</div>
+			{% if speakingImage %}
+				<figure class="[ Speaking__image ]">
+					<img src="{{ speakingImage }}" alt="{{ speakingAlt }}"/>
+					<figcaption class="[ small ]" data-content="{{ speakingCaption }}">
+						{{ speakingCaption }}
+					</figcaption>
+				</figure>
+			{% endif %}
+		</div>
+
+		{% if talks %}
+			<div class="[ Speaking__talks ] [ sf-flow ]">
+				{% include "partials/components/talks.njk" %}
+			</div>
+		{% endif %}
+	</div>
+</section>

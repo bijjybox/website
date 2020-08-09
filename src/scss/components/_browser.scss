@@ -1,0 +1,89 @@
+.Browser {
+  --underline: var(--color-peach);
+  color: var(--color-dark);
+  position: relative;
+  background-color: var(--color-light);
+  border-radius: 20px;
+  border: solid 2px var(--color-dark);
+  padding: 4rem 1rem 1rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  video-player {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  &__heading {
+    color: var(--color-dark);
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      color: var(--color-dark);
+      z-index: 1;
+      text-decoration: none;
+      @include apply-utility('font', 'sans-serif');
+      font-weight: 600;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.1s ease-out;
+    }
+    a.none:hover {
+      border-color: var(--color-peach);
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-dark);
+    top: 2rem;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 4rem;
+    left: 1rem;
+    height: 1.5rem;
+    top: 0.5rem;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 21'%3E%3Cg id='Layer_1' data-name='Layer 1'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23404040'/%3E%3Ccircle cx='40' cy='10' r='10' fill='%23404040'/%3E%3Ccircle cx='70' cy='10' r='10' fill='%23404040'/%3E%3C/g%3E%3C/svg%3E%0A");
+  }
+}
+
+.night .Browser {
+  --underline: var(--color-mint);
+  color: var(--color-dark);
+  background-color: var(--color-lilac);
+
+  &:before {
+    filter: invert(1) brightness(1.3);
+  }
+}

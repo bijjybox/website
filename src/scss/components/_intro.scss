@@ -1,0 +1,240 @@
+.Intro {
+  position: relative;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border: solid 3px var(--color-dark);
+  background-color: var(--color-light);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--color-dark-down);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80vw;
+  margin: 0 auto;
+
+  &__svg {
+    position: absolute;
+    height: 200px;
+    top: -58px;
+    left: -181px;
+    z-index: -1;
+  }
+
+  &:after {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    min-width: 150px;
+    min-height: 150px;
+    right: -20%;
+    bottom: -12%;
+    border-radius: 100%;
+    background-color: var(--color-mint);
+    z-index: -2;
+  }
+
+  &:before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    min-width: 150px;
+    min-height: 150px;
+    right: -14%;
+    bottom: -15%;
+    border-radius: 100%;
+    border: solid 3px var(--color-dark);
+    z-index: -1;
+  }
+
+  &__summary {
+    z-index: 1;
+    position: relative;
+    --flow-space: #{get-size(500)};
+  }
+
+  &__list > * + * {
+    padding-left: 0.5rem;
+  }
+
+  &__list-item {
+    display: inline-block;
+  }
+
+  &__list-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-mint);
+  }
+
+  &__meta {
+    position: relative;
+    padding-left: 0.9rem;
+    padding-top: 1.5rem;
+    --flow-space: 0.75rem;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 3.5rem;
+      height: 150%;
+      left: 0;
+      top: 0;
+      background-color: var(--color-lilac);
+      border: 2px solid var(--color-dark);
+      z-index: -1;
+    }
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    margin-right: 2rem;
+    color: var(--color-dark);
+  }
+
+  &__heading {
+    display: inline;
+    background-image: linear-gradient(
+      transparent 0%,
+      transparent 55%,
+      var(--color-peach) 55%,
+      var(--color-peach) 90%,
+      transparent 90%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    animation: underline 0.5s 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+
+  &__copy {
+    position: relative;
+  }
+
+  &--compact {
+    max-width: 20ex;
+  }
+
+  &__list-item {
+    list-style: none;
+  }
+
+  &__tag {
+    text-decoration: none;
+  }
+}
+
+.posts {
+  .Intro {
+    &__heading:only-child {
+      display: block;
+      padding-bottom: 1.5rem;
+      background-image: none;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Intro {
+    box-shadow: 1rem 1rem 0 0 var(--color-dark);
+    &__inner {
+      display: flex;
+    }
+
+    &__heading {
+      border: none;
+    }
+
+    &__copy {
+      width: 50%;
+      margin-left: 2rem;
+    }
+
+    &__byline {
+      margin-right: 2rem;
+    }
+
+    &__copy:only-child {
+      width: 100%;
+    }
+
+    &__icon {
+      width: 2rem;
+    }
+
+    &__svg {
+      height: 250px;
+      top: -90px;
+      left: -100px;
+    }
+
+    &__meta {
+      margin-left: 2rem;
+      --flow-space: 1rem;
+      &:after {
+        width: 4rem;
+        height: 170%;
+        left: 0;
+      }
+    }
+
+    &__summary {
+      margin-top: 0;
+    }
+
+    &:after {
+      right: -16%;
+      bottom: -30%;
+    }
+
+    &:before {
+      right: -14%;
+      bottom: -34%;
+    }
+  }
+}
+
+.writing {
+  --color-selection: var(--color-peach);
+  --color-selection-bg: var(--color-dark-selection);
+  .Intro {
+    &:after {
+      background-color: var(--color-lilac);
+    }
+  }
+}
+
+@keyframes underline {
+  to {
+    background-size: 8rem 100%;
+  }
+}
+
+.tags {
+  .Intro {
+    &:after {
+      background-color: var(--color-marshmellow);
+    }
+    &__heading {
+      display: inline;
+      background-image: linear-gradient(
+        transparent 0%,
+        transparent 55%,
+        var(--color-peach) 55%,
+        var(--color-peach) 90%,
+        transparent 90%,
+        transparent 100%
+      );
+    }
+  }
+}
+@keyframes underline {
+  to {
+    background-size: 8rem 100%;
+  }
+}

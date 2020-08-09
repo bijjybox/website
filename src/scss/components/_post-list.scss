@@ -1,0 +1,140 @@
+.Post-list {
+  &__items {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  &__item {
+    --flow-space: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+      --underline: var(--color-peach);
+      text-decoration: none;
+      color: var(--color-dark);
+      margin-top: 2rem;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__date {
+      position: relative;
+      display: block;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(125, 125, 125, 0.255) 50%,
+        rgba(255, 255, 255, 0) calc(50% + 3px),
+        rgba(255, 255, 255, 0) 100%
+      );
+
+      time {
+        padding-right: 1rem;
+        background-color: var(--color-light-fade);
+      }
+    }
+
+    &__tag + &__tag {
+      padding-left: 0.75rem;
+      margin-left: 0.5rem;
+      border-left: solid 1px var(--color-dark);
+    }
+
+    &__meta {
+      padding-bottom: 3rem;
+    }
+
+    footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(125, 125, 125, 0.255) 50%,
+        rgba(255, 255, 255, 0) calc(50% + 3px),
+        rgba(255, 255, 255, 0) 100%
+      );
+
+      a {
+        color: var(--color-dark);
+        text-transform: capitalize;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+
+        &:hover {
+          color: var(--color-lilac-no-swop);
+
+          &:after {
+            filter: invert(0.4) sepia(1) saturate(2.5) hue-rotate(214deg) brightness(0.99);
+          }
+        }
+      }
+
+      > * {
+        background-color: var(--color-light-fade);
+      }
+
+      > *:nth-child(1) {
+        padding-right: 1rem;
+      }
+
+      > *:nth-child(2) {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--color-mint);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 50%,
+        var(--color-lilac) 50%
+      );
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Post-list {
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      --flow-space: 0;
+      width: 50%;
+
+      > * {
+        --flow-space: 1rem;
+      }
+
+      &__image {
+        display: block;
+        border-radius: 10px;
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Post-list {
+    &__item {
+      --flow-space: 0;
+      width: 33%;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<header class="[ Intro ] [ pad-around ]">
+	<div class="[ Intro__inner ] [ inner-wrapper ] [ sf-flow ]">
+		<div class="[ Intro__copy ] [ sf-flow ]">
+			<h1 class="[ Intro__heading ] [ h3 ]">{{ introHeading }}</h1>
+			{% if introByline %}
+				<div class="[ Intro__byline ] [ h6 ] [ sf-flow ]">{{ introByline | safe }}</div>
+			{% endif %}
+		</div>
+
+		{% if introSummary %}
+			<div class="[ Intro__summary ] [ sf-flow ]">
+				{{ introSummary | safe }}
+			</div>
+		{% endif %}
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="decorative" aria-hidden="true" viewbox="0 0 133.9 97.5" overflow="visible" class="Intro__svg">
+		<defs>
+			<pattern x="-257.8" y="-219" width="8" height="8" patternunits="userSpaceOnUse" id="dot-pattern" viewbox="0 -8 8 8" overflow="visible">
+				<rect y="-8" width="8" height="8" fill="none"/>
+				<circle cx="4.3" cy="-4" r=".7" fill="var(--color-dark)" stroke="var(--color-dark)" stroke-miterlimit="10"/>
+			</pattern>
+		</defs>
+		<pattern id="SVGID_1_" xlink:href="#dot-pattern" patterntransform="translate(-1.3637 4.2113)"/>
+		<rect width="133.9" height="90" fill="url(#SVGID_1_)"/>
+	</svg>
+</header>

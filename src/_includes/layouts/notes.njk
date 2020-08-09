@@ -1,0 +1,16 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Notes' %}
+
+{# Intro content #}
+{% set introHeading = "Notes to my future self..." %}
+{% set introSummary %}{{ content | safe }}{% endset %}
+
+{# Post list content #}
+{% set postListItems = collections.notes %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    {% include "partials/components/post-list.njk" %}
+  </main>
+{% endblock %}

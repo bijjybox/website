@@ -1,0 +1,31 @@
+{% if talks.length %}
+<section class="[ post-list ] [ pad-top-700 gap-bottom-900 ]">
+  <div class="[ sf-flow ]">
+    {% if talkListHeading %}
+    <h2 class="[ post-list__heading Heading--highlight ] [ h4 font-sans-serif]">
+      {{ talkListHeading }}
+    </h2>
+    {% endif %}
+    <ol class="[ post-list__items ] [ sf-flow ]" reversed>
+      {% for talk in talks %}
+      <li class="post-list__item">
+        <h3 class="font-base leading-tight h4 weight-mid">
+          <a href="{{ talk.link }}" class="post-list__link" rel="bookmark">{{
+            talk.title
+          }}</a>
+        </h3>
+        <p class="h5 gap-top-300 weight-mid">{{ talk.description }}</p>
+        <span class="h5 gap-top-300 weight-light">
+          <time datetime="{{ talk.datetime }}">{{ talk.date }}</time>
+        </span>
+        {% if talk.location %}
+        <span class="h5 gap-top-300 weight-light">
+          <span>| {{ talk.location }}</span>
+        </span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}

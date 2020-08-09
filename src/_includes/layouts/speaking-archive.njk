@@ -1,0 +1,134 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Speaking' %}
+
+{# Intro content #}
+{% set introHeading = "Speaking." %}
+{% set introSummary %}{{ content | safe }}{% endset %}
+
+{% set talks = [] %}
+
+{% set webinars = [{
+    title: 'Interactive web animation with SVG',
+    description: 'Smashing TV',
+    link: 'https://www.smashingmagazine.com/smashing-tv/interactive-web-animation-with-svg/',
+    date: '20th August 2019, 16:00 GMT',
+    datetime: '2019-08-20T16:00:00Z'
+  }
+] %}
+
+{% set workshops = [{
+    title: 'Workshop Summit',
+    description: 'Getting started with SVG animation',
+    link: 'https://workshop-summit.com/',
+    date: '5th March 2020',
+    datetime: '2020-03-05',
+    location: 'Brussels, Belgium'
+  }
+] %}
+
+{% set previousTalks = [
+  {
+    title: 'beyond tellerrand',
+    description: 'Interactive web animation with SVG',
+    link: 'https://beyondtellerrand.com/events/berlin-2019',
+    date: '13th - 16th November 2019',
+    datetime: '2019-11-13',
+    location: 'Berlin, Germany'
+  },{
+    title: 'Devfest',
+    description: 'Interactive web animation with SVG',
+    link: 'https://devfest.gdgnantes.com/',
+    date: '21st October 2019',
+    datetime: '2019-09-26',
+    location: 'Nantes, France'
+  },{
+    title: 'Generate Conf',
+    description: 'Limitation breeds creativity',
+    link: 'https://www.generateconf.com',
+    date: '26th September 2019',
+    datetime: '2019-09-26',
+    location: 'London, UK'
+  },{
+    title: 'Finch Conf',
+    description: 'Interactive web animation with SVG',
+    link: 'https://finchconf.uk',
+    date: '24th September 2019',
+    datetime: '2019-09-24',
+    location: 'Edinburgh, UK'
+  },{
+    title: 'CSS camp',
+    description: 'Interactive web animation with SVG',
+    link: 'https://csscamp.tech/',
+    date: '17th July 2019',
+    datetime: '2019-07-17',
+    location: 'Barcelona, Spain'
+  },{
+    title: 'Voxxed days',
+    description: 'Limitation breeds creativity',
+    link: 'https://voxxeddays.com/athens/',
+    date: '7th June 2019',
+    datetime: '2019-06-07',
+    location: 'Athens, Greece'
+  },{
+    title: 'Bytes Conf',
+    description: 'Limitation breeds creativity',
+    link: 'https://www.bytesconf.co.uk/',
+    date: '7th March 2019',
+    datetime: '2019-03-07',
+    location: 'Brighton, UK'
+  },{
+    title: 'Full Stack Conf',
+    description: 'Limitation breeds creativity',
+    link: 'https://skillsmatter.com/skillscasts/11949-limitation-breeds-creativity',
+    date: '13th July 2018',
+    datetime: '2018-07-13',
+    location: 'London, UK'
+  },{
+    title: 'Front End London',
+    description: 'Limitation breeds creativity',
+    link: 'https://skillsmatter.com/skillscasts/11949-limitation-breeds-creativity',
+    date: '29th March 2018',
+    datetime: '2018-03-29',
+    location: 'London, UK'
+  }
+] %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+
+    <div class="[ wrapper ] [ videos ]">
+      <div class="video-player">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8p5SDI4TNDc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="video-player">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cgDBFldyJdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+      <div class="video-player">
+        <iframe width="560" height="315" src="https://player.vimeo.com/video/373163932" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen"></iframe>
+
+      </div>
+    </div>
+
+    <div class="[ wrapper grid ]">
+      <div>
+        {% set talkListHeading = "Upcoming" %}
+        {% set talks = workshops %}
+        {% include 'partials/components/talk-list.njk' %}
+
+        {% set talkListHeading = "Webinars" %}
+        {% set talks = webinars %}
+        {% include 'partials/components/talk-list.njk' %}
+      </div>
+
+      <div>
+        {# {% set talkListHeading = "Upcoming talks" %}
+																								        {% include 'partials/components/talk-list.njk' %} #}
+
+        {% set talkListHeading = "Previous Talks" %}
+        {% set talks = previousTalks %}
+        {% include 'partials/components/talk-list.njk' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

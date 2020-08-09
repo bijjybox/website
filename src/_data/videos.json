@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "url": "https://player.vimeo.com/video/373163932",
+      "title": "Interactive web animation with SVG",
+      "conference": "beyond tellerrand - Berlin"
+    },
+    {
+      "url": "https://www.youtube.com/embed/cgDBFldyJdM",
+      "title": "Limitation breeds creativity",
+      "conference": "Bytes conf - Brighton"
+    },
+    {
+      "url": "https://www.youtube.com/embed/8p5SDI4TNDc",
+      "title": "Interactive web animation with SVG",
+      "conference": "CSS camp - Barcelona"
+    }
+  ]
+}

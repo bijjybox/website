@@ -1,0 +1,93 @@
+.Contact {
+  --color-selection: var(--color-sherbet);
+  --color-selection-bg: var(--color-dark-selection);
+  min-height: 100vh;
+  background-color: var(--color-mint);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    background-color: var(--color-light);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 2.4rem,
+      var(--color-light) 2.4rem,
+      var(--color-light) 100%
+    );
+
+    .link {
+      color: var(--color-dark);
+      z-index: 1;
+      text-decoration: none;
+      @include apply-utility('font', 'sans-serif');
+      font-weight: 600;
+      border-bottom: 1.5px solid var(--color-mint);
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    grid-row: 3 / span 1;
+  }
+
+  &__svg {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__social {
+    display: inline-block;
+    a {
+      font-size: 0;
+      color: var(--color-dark);
+      transition: color 0.2s ease-out;
+    }
+    a:hover {
+      color: var(--color-mint);
+    }
+    svg {
+      height: 1.2rem;
+    }
+    * + * {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Contact {
+    &__inner {
+      width: 100%;
+      grid-template-columns: auto 55%;
+      grid-template-rows: repeat(2, auto);
+    }
+    &__heading {
+      align-self: end;
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 2;
+    }
+    &__content {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+    }
+    &__svg {
+      margin-bottom: 2rem;
+      align-self: center;
+      width: 100%;
+      max-width: 800px;
+      grid-row: 1 / span 2;
+      grid-column: 2 / span 1;
+    }
+  }
+}
+
+.night {
+  .Contact {
+    --underline: var(--color-mint);
+  }
+}

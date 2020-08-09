@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "external": true,
+      "data": {
+        "title": "Motion Paths – Past, Present and Future",
+        "metaDesc": "Exploring the upcoming CSS motion path module and the newly released GSAP3.",
+        "image": "/images/path.png",
+        "alt": "a spaceship following a dotted SVG path"
+      },
+      "publication": {
+        "name": "Codrops",
+        "url": "https://tympanus.net/"
+      },
+      "date": "2019-12-03",
+      "url": "https://tympanus.net/codrops/2019/12/03/motion-paths-past-present-and-future/"
+    },
+    {
+      "external": true,
+      "data": {
+        "title": "Earth day, API's and sunshine",
+        "metaDesc": "Hooking into a solar panel API and creating an animated, SVG forest to celebrate Earth day",
+        "image": "/images/building.jpg",
+        "alt": "an SVG illustration of an office building, covered in trees"
+      },
+      "publication": {
+        "name": "Clearleft",
+        "url": "https://clearleft.com/"
+      },
+      "date": "2019-04-22",
+      "url": "https://clearleft.com/posts/earth-day"
+    },
+    {
+      "external": true,
+      "data": {
+        "title": "The many ways to change an SVG fill on hover",
+        "metaDesc": "How do you go about adding a colored hover effect to an icon if it’s not an inline SVG? An exploration into CSS and SVG filters",
+        "image": "/images/point.svg",
+        "alt": "a cursor hovers over a white circle"
+      },
+      "publication": {
+        "name": "CSS tricks",
+        "url": "https://css-tricks.com/"
+      },
+      "date": "2019-12-03",
+      "url": "https://css-tricks.com/the-many-ways-to-change-an-svg-fill-on-hover-and-when-to-use-them/"
+    }
+  ]
+}

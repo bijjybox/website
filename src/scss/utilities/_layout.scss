@@ -1,0 +1,119 @@
+/* Fluid paddings
+-------------------------------------------------- */
+.pad-before-x-sm {
+  padding-top: calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-after-x-sm {
+  padding-bottom: calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-around-x-sm {
+  padding-top: calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(0.75rem + (1 - 0.75) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-before-sm {
+  padding-top: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-after-sm {
+  padding-bottom: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-around-sm {
+  padding-top: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-before {
+  padding-top: calc(2rem + (4 - 2) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-after {
+  padding-bottom: calc(2rem + (4 - 2) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-around {
+  padding-top: calc(2rem + (4 - 2) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(2rem + (4 - 2) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-before-lg {
+  padding-top: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-after-lg {
+  padding-bottom: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-around-lg {
+  padding-top: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-before-xlg {
+  padding-top: calc(7.5rem + (10 - 7.5) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-after-xlg {
+  padding-bottom: calc(7.5rem + (10 - 7.5) * ((100vw - 20rem) / (100 - 20)));
+}
+
+.pad-around-xlg {
+  padding-top: calc(7.5rem + (10 - 7.5) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(7.5rem + (10 - 7.5) * ((100vw - 20rem) / (100 - 20)));
+}
+
+@media screen and (min-width: 100em) {
+  .pad-before-x-sm {
+    padding-top: 1rem;
+  }
+  .pad-after-x-sm {
+    padding-bottom: 1rem;
+  }
+  .pad-around-x-sm {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .pad-before-sm {
+    padding-top: 1.5rem;
+  }
+  .pad-after-sm {
+    padding-bottom: 1.5rem;
+  }
+  .pad-around-sm {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .pad-before {
+    padding-top: 4rem;
+  }
+  .pad-after {
+    padding-bottom: 4rem;
+  }
+  .pad-around {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .pad-before-lg {
+    padding-top: 6rem;
+  }
+  .pad-after-lg {
+    padding-bottom: 6rem;
+  }
+  .pad-around-lg {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .pad-before-xlg {
+    padding-top: 10rem;
+  }
+  .pad-after-xlg {
+    padding-bottom: 10rem;
+  }
+  .pad-around-xlg {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
